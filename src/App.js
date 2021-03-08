@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import AllMobiers from './Component/AllMovies/AllMobiers';
+import Header from './Component/Header/Header';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import MovieDetails from './Component/MovieDetails/MovieDetails';
+import Footer from './Component/Footer/Footer';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+
+      <Router>
+        <Header></Header>
+        <Switch>
+
+          <Route path="/movie/:id">
+            <MovieDetails></MovieDetails>
+          </Route>
+
+          <Route path="/movie">
+          </Route>
+          
+          <Route path="/home">
+            <AllMobiers></AllMobiers>
+            </Route>
+
+            <Route exact path="/">
+              <AllMobiers></AllMobiers>
+            </Route>
+
+            <Route path="*">
+              <h1 style={{ color: 'red', textAlign: 'center', marginTop: '100px' }}>404 --NOT FOUND</h1>
+            </Route>
+
+        </Switch>
+        <Footer></Footer>
+
+      </Router>
+
     </div>
   );
-}
+};
 
 export default App;
