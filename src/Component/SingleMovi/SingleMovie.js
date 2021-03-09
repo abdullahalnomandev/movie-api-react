@@ -8,13 +8,12 @@ const SingleMovie = (props) => {
 
     return (
            <div  className="col-md-3 my-3">
-                <Card style={{ width: '18rem' }}>
+                <Card>
                 <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${poster_path}`}/>
                 <Card.Body>
                     <div className="text-center">
                     <Card.Title>{original_title}</Card.Title>
                     <Button as={Link} to={`/movie/${id}`} variant="primary">View Details</Button>
-                    {/* <Link to={`/movie/${id}`} > View Details</Link> */}
                     </div>
                 </Card.Body>
             </Card>

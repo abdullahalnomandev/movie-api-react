@@ -21,7 +21,7 @@ const MovieDetails = () => {
         <div className="container my-5">
             <div className="row">
                 <div className="col-md-6">
-                    <img style={{width:"400px"}} className="img-fluid" src={`https://image.tmdb.org/t/p/w1280/${movies.poster_path}`} alt="" />
+                    <img style={{ width: "400px" }} className="img-fluid" src={`https://image.tmdb.org/t/p/w1280/${movies.poster_path}`} alt="" />
                 </div>
                 <div className="col-md-6">
                     <h3>{movies.title}</h3>
